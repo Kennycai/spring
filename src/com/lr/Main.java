@@ -11,8 +11,11 @@ public class Main {
 //		helloWorld.setName("Spring");
 		helloWorld.hello();
 		
-		Person person = (Person)ctx.getBean("person1");
-		System.out.println(person);
+		Person person1 = (Person)ctx.getBean("person1");
+		System.out.println(person1);
+		
+		Person person2 = (Person)ctx.getBean("person2");
+		System.out.println(person2);
 	}
 	
 }
