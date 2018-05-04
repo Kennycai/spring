@@ -14,6 +14,10 @@
 		<property name="name" value="audi"></property>
 	</bean>
 	
+	<bean id="car2" class="com.lr.Car">
+		<property name="name" value="baoma"></property>
+	</bean>
+	
 	<bean id="person1" class="com.lr.Person">
 		<property name="name" value="wangyi"></property>
 		<property name="age" value="11"></property>
@@ -51,4 +55,22 @@
 	<util:list id="cars">
 		<ref bean="car1"/>
 	</util:list>
+	
+<!-- 继承 -->
+	<bean id="person3" class="com.lr.Person" p:name="wangsan" parent="person2"></bean>
+
+<!-- score 
+	prototype:原型，每次调用 getBean 方法都会返回一个新的 bean. 且在第一次调用 getBean 方法时才创建实例
+	singleton:单例的. 每次调用 getBean 方法都会返回同一个 bean. 且在 IOC 容器初始化时即创建 bean 的实例. 默认值 
+-->
+	<bean id="person4" class="com.lr.Person" scope="prototype"></bean>
+	
+<!-- SpEL表达式的使用 -->
+	<bean id="person5" class="com.lr.Person" p:name="#{'wangwu'}" p:age="#{21}"
+		p:car="#{car1}">
+	</bean >
+	
+	<bean id="person6" class="com.lr.Person" p:name="#{'wangliu'}" p:age="#{22}"
+		p:car="#{person5.age > 21 ? car1 : car2}">
+	</bean >
 </beans>

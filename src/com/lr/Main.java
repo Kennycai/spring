@@ -16,6 +16,15 @@ public class Main {
 		
 		Person person2 = (Person)ctx.getBean("person2");
 		System.out.println(person2);
+		
+		Person person3 = (Person)ctx.getBean("person3");
+		System.out.println(person3);
+		
+		person3 = (Person)ctx.getBean("person5");
+		System.out.println(person3);
+		
+		Person person6 = (Person)ctx.getBean("person6");
+		System.out.println(person6);
 	}
 	
 }
