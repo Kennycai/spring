@@ -10,5 +10,9 @@ public class Main {
 //		HelloWorld helloWorld = new HelloWorld();
 //		helloWorld.setName("Spring");
 		helloWorld.hello();
+		
+		Person person = (Person)ctx.getBean("person1");
+		System.out.println(person);
 	}
+	
 }

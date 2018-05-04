@@ -6,4 +6,36 @@
 	<bean id="helloWorld" class="com.lr.HelloWorld">
 		<property name="name" value="Spring"></property>
 	</bean>
+	
+	<bean id="car1" class="com.lr.Car">
+		<property name="name" value="audi"></property>
+	</bean>
+	
+	<bean id="person1" class="com.lr.Person">
+		<property name="name" value="wangyi"></property>
+		<property name="age" value="11"></property>
+		<property name="car" ref="car1"></property><!-- 引用外部bean，ref -->
+		<property name="cars">
+			<map>
+				<entry key="wangyi" value-ref="car1"/><!-- 注入map -->
+			</map>
+		</property>
+		<property name="carList" ><!-- 注入list -->
+			<list>
+				<ref bean="car1"/>
+				<bean class="com.lr.Car"><!-- 内部bean -->
+					<property name="name" value="baoma"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+<!-- 构造器注入，莫名错误。 
+
+	<bean id="person2" class="com.lr.Person" >
+		<constructor-arg value="lr"></constructor-arg>
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg ref="car1"></constructor-arg>
+	</bean>
+	
+ -->	
 </beans>
