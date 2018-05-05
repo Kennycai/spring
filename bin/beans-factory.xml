@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 静态工厂函数方法 -->
+<bean id="car1" class="com.lr.factory.StaticCarFactory"
+	factory-method="getCar">
+	<constructor-arg value="BMW"></constructor-arg>
+</bean>
+
+<!-- 实例工厂方法 -->
+<bean id="instanceCarFactory" class="com.lr.factory.InstanceCarFactory"></bean>
+<!-- 调用工厂方法 -->
+<bean id="car2" factory-bean="instanceCarFactory" factory-method="getCar">
+	<constructor-arg value="BMW"></constructor-arg>
+</bean>
+
+<!-- 通过FactoryBean来配置bean实例 -->
+<bean id="car3" class="com.lr.factory.CarFactoryBean"></bean>
+
+</beans>

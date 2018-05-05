@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 通过Spring IOC 容器扫描的包
+	resource-pattern:指定扫描资源
+ -->
+<!--  <context:component-scan base-package="com.lr.annotation"
+	resource-pattern="repository/*.class"></context:component-scan>
+-->	
+
+<context:component-scan base-package="com.lr.annotation">
+<!-- 
+通过exclude-filter指定不包含的表达式组件
+通过exclude-filter指定包含的表达式组件，要配合use-default-filters="false"使用
+type:annotation根据注解，assignable根据类名或接口名
+ -->
+ 
+<!-- 
+	<context:exclude-filter type="annotation" 
+		expression="org.springframework.stereotype.Repository"/> 
+-->
+<!-- 
+	<context:include-filter type="annotation" 
+		expression="org.springframework.stereotype.Repository"/>
+ -->
+ <!-- 
+<context:exclude-filter type="assignable" 
+	expression="com.lr.annotation.repository.UserRepository"/>
+ -->
+ <!-- 
+<context:include-filter type="assignable" 
+	expression="com.lr.annotation.repository.UserRepository"/>
+ -->
+</context:component-scan>
+
+</beans>
+<!-- 出现这个异常：Unexpected exception parsing XML document from class path resource，可能是少了spring-aop-4.0.0.RELEASE.jar这个包 -->
