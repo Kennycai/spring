@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="lib/spring-core-5.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-5.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-5.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aspects-5.0.5.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
